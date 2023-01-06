@@ -1,12 +1,12 @@
 import FullPageWidth from "../components/FullPageWidth";
 import Hero from "../components/Hero";
-import Hero2 from "../components/Hero2";
+import Intro from "../components/Intro";
 
 export default function Page() {
   return (
     <>
-      <Hero2 styles="col-span-full" />
-      {/* <Hero styles="col-span-full" /> */}
+      <Hero styles="col-span-full" />
+      <Intro styles="col-span-6 bg-white" />
     </>
   )
 }

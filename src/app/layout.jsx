@@ -6,7 +6,7 @@ import "../styles/globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black">
+      <body className="bg-[#18181B]">
         <PageContainer>
           <GridLayout>
             <Header />
