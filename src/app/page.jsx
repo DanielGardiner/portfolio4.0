@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Hero2 styles="col-span-full" />
-      <Hero styles="col-span-full" />
+      {/* <Hero styles="col-span-full" /> */}
     </>
   )
 }
