@@ -1,18 +1,18 @@
-import GridLayout from "../components/GridLayout";
+import InnerGridContainer from "../components/layout/InnerGridContainer";
 import Header from "../components/Header";
-import PageContainer from "../components/PageContainer";
+import OuterWidthContainer from "../components/layout/OuterWidthContainer";
 import "../styles/globals.css";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#18181B]">
-        <PageContainer>
-          <GridLayout>
+      <body className="bg-[#18181B] overflow-x-hidden">
+        <OuterWidthContainer>
+          <InnerGridContainer>
             <Header styles="col-span-full" />
             {children}
-          </GridLayout>
-        </PageContainer>
+          </InnerGridContainer>
+        </OuterWidthContainer>
       </body>
     </html>
   );

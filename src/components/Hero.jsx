@@ -1,12 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import FullPageWidth from "./FullPageWidth";
-import GridLayout from "./GridLayout";
+import InnerGridContainer from "./layout/InnerGridContainer";
 import HeroImage from "../assets/images/web-hero-image.png";
 import MobileImg from "../assets/images/phone-image.png";
-import ScreenImg from "../assets/images/hero-screens-image.jpg";
-import PageContainer from "./PageContainer";
 import { motion } from "framer-motion";
 
 export default function Hero({ styles }) {

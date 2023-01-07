@@ -1,4 +1,4 @@
-import FullPageWidth from "../components/FullPageWidth";
+import FullPageWidth from "../components/layout/FullPageWidth";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 
