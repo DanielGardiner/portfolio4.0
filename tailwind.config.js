@@ -11,6 +11,14 @@ module.exports = {
         tablet: "960px",
         desktop: "1248px",
       },
+      colors: {
+        myGreen: {
+          DEFAULT: "#29AC6F",
+        },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      }
     },
   },
   plugins: [],
