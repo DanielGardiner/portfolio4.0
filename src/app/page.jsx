@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Hero styles="col-span-full" />
-      <Intro styles="col-span-6 bg-white" />
+      <Intro styles="col-span-full bg-white" />
     </>
   )
 }

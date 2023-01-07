@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
       <body className="bg-[#18181B]">
         <PageContainer>
           <GridLayout>
-            <Header />
+            <Header styles="col-span-full" />
             {children}
           </GridLayout>
         </PageContainer>

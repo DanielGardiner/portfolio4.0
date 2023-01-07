@@ -4,7 +4,8 @@ import GridLayout from "./GridLayout";
 export default function Header({ styles }) {
   return (
     <nav
-      className={`absolute left-0 right-0 z-[999] flex justify-between py-4 text-white ${styles}`}
+      // className={`absolute left-0 right-0 z-[999] flex justify-between py-4 text-white ${styles}`}
+      className={`flex justify-between py-4 text-white ${styles}`}
     >
       <div>
         <img
