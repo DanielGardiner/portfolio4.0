@@ -5,15 +5,24 @@ import OuterWidthContainer from "./layout/OuterWidthContainer";
 export default function Intro({ styles }) {
   return (
     <div className={`${styles}`}>
-      <FullPageWidth styles="bg-red-500">
+      <FullPageWidth>
         <OuterWidthContainer>
           <InnerGridContainer>
-            <div className="col-span-full">
-              This is the text here
+            <div className="col-span-full rounded-lg">
+              <div className="bg-white  p-3">
+                This is the text here
+                <br />
+                This is the text here
+                <br />
+                This is the text here
+                <br />
+                This is the text here
+                <br />
+              </div>
             </div>
           </InnerGridContainer>
         </OuterWidthContainer>
       </FullPageWidth>
     </div>
-  )
+  );
 }
