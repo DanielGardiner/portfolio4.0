@@ -6,7 +6,7 @@ import "../styles/globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#18181B] overflow-x-hidden">
+      <body className="overflow-x-hidden">
         <OuterWidthContainer>
           <InnerGridContainer>
             <Header styles="col-span-full" />
