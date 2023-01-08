@@ -9,8 +9,8 @@ export default function Page() {
   return (
     <>
       <Hero styles="col-span-full" />
-      <Intro styles="col-span-full mt-72 bg-transparent" />
-      <FloatingImage>
+      <Intro styles="col-span-full mt-52 bg-transparent" />
+      {/* <FloatingImage>
         <div
           className="absolute top-0 left-0 z-10 h-[100%] w-[100%] rounded-full bg-gradient-to-r from-white to-[#AB3728]
         opacity-[45%]
@@ -23,7 +23,7 @@ export default function Page() {
           width="auto"
           className="relative z-30 h-[350px] w-[350px] rounded-full object-cover"
         />
-      </FloatingImage>
+      </FloatingImage> */}
       <Projects styles="col-span-full mt-72 bg-transparent" />
     </>
   );
