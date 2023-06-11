@@ -24,7 +24,7 @@ export default function ContactButton() {
 
   return (
     <CopyToClipboard text={"gardiner.daniel@hotmail.co.uk"} onCopy={handleCopy}>
-      <button className="relative mt-6 inline-flex items-center rounded bg-[#5DC1C2] py-2 px-4 font-bold text-black hover:bg-[#7AF9F2]">
+      <button className="relative mt-6 inline-flex items-center font-bold gradient-button px-6 py-2 rounded-[40px] hover:scale-105 ease-in duration-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -41,7 +41,7 @@ export default function ContactButton() {
         </svg>
         <span className="ml-3">daniel.gardiner.tech@gmail.com</span>
         {isCopied && (
-          <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-slate-400 opacity-90">
+          <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-slate-600 opacity-90 px-6 py-2 rounded-[40px]">
             <span className="mr-1">Copied</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

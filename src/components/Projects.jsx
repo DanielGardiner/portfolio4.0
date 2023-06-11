@@ -4,7 +4,7 @@ import CubeImage from "../assets/images/cube-machine-image.png";
 import MeImage from "../assets/images/me-image.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ContactButton from "./ContactButton";
+import ContactButton from "./buttons/ContactButton";
 import InnerGridContainer from "./layout/InnerGridContainer";
 import FullPageWidth from "./layout/FullPageWidth";
 import OuterWidthContainer from "./layout/OuterWidthContainer";

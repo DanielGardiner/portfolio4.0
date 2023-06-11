@@ -1,12 +1,22 @@
 "use client";
 
+import InnerGridContainer from "../components/layout/InnerGridContainer";
+import OuterWidthContainer from "../components/layout/OuterWidthContainer";
+
+// import CubeIcon from "../assets/images/cube-code-image.png";
+// import CubeIcon from "../assets/images/me-image.png";
+import CubeIcon from "../assets/images/gardener-5.webp";
+// import CubeIcon from "../assets/images/portal-hero.png";
+// import CubeIcon from "../assets/images/cube-code-image.png";
+
 import Image from "next/image";
-import InnerGridContainer from "./layout/InnerGridContainer";
 import MobileImg from "../assets/images/cube-code-image.png";
 import { motion } from "framer-motion";
 import FullPageWidth from "./layout/FullPageWidth";
-import OuterWidthContainer from "./layout/OuterWidthContainer";
-import ContactButton from "./ContactButton";
+import Container from "./layout/Container";
+import ContactButton from "./buttons/ContactButton";
+import Header from "./Header";
+import PrimaryButton from "./buttons/PrimaryButton";
 
 export default function Hero({ styles }) {
   const imageVariants = {
@@ -26,41 +36,55 @@ export default function Hero({ styles }) {
     },
   };
 
+
   return (
-    <FullPageWidth styles="bg-[#111] rounded-bl-[0px] rounded-bl-[170px] tablet:rounded-bl-[200px]">
-      <OuterWidthContainer>
-        <InnerGridContainer>
-          <div
-            className={`mt-24  grid grid-cols-1 text-white tablet:grid-cols-2 ${styles}`}
-          >
-            <div className="relative z-[50]">
-              <h1 className="text-5xl font-extrabold">Fullstack Developer</h1>
-              <h6 className="mt-8 max-w-md text-lg leading-relaxed tablet:max-w-none">
-                I love to create elegant and intuitive web applications, and I
-                take great pride in my work as a developer.
-              </h6>
-              <ContactButton />
-            </div>
-            <div className="relative flex items-center justify-center">
-              <div className="absolute top-[-200px] right-[-380px]  z-[10] h-[100%] w-[200%] rounded-full bg-gradient-to-r from-[#72F3EF] to-[#D53449] opacity-[15%] blur-[90px]" />
-              <motion.div
-                initial="hidden"
-                animate="show"
-                variants={imageVariants}
-                className="mt-[-150px] ml-[220px] tablet:mt-[-360px] tablet:ml-0"
-              >
-                <Image
-                  src={MobileImg}
-                  width="auto"
-                  height="auto"
-                  alt=""
-                  className="relative z-[20] max-w-none"
-                />
-              </motion.div>
-            </div>
+    <div className="bg-themeGrey-100 relative">
+        {/* <div className="h-[120px] w-[80px] border-[7px] border-white rounded-full absolute -left-10 -top-10" />
+        <div className="h-[250px] w-[110px] border-[7px] border-white rounded-full absolute -left-10 -top-11" />
+        <div className="h-[350px] w-[150px] border-[7px] border-white rounded-full absolute -left-10 -top-10" /> */}
+
+      <Container styles="pb-10">
+        <Header styles="col-span-12 mb-9" />
+        <div className="col-span-12 tablet:col-span-6 flex-col flex mb-8 tablet:mb-0">
+
+          {/* title */}
+          <h1 className="text-6xl font-bold text-themePurple mb-9">
+            <span className="block m-0 mb-3">
+              Providing
+            </span>
+            <span className="block m-0 mb-3 text-themeGreen">
+              fresh produce
+            </span>
+            <span className="block m-0 mb-3">
+              Every day
+            </span>
+          </h1>
+
+          {/* lead text */}
+          <p className="text-themeGrey-500 mb-6">
+            Morbi leo urna molestie at. Sed euismod nisi porta lorem mollis aliquam ut.<br /> Tempor orci dapibus ultrices in iaculis nunc. Viverra ipsum nunc <br />aliquet bibendum enim facilisis gravida neque convallis.
+          </p>
+
+          {/* button */}
+          <div>
+            <PrimaryButton />
           </div>
-        </InnerGridContainer>
-      </OuterWidthContainer>
-    </FullPageWidth>
-  );
+
+        </div>
+        <div
+          className="col-span-12 tablet:col-span-6 text-white relative min-h-[800px] tablet:min-h-0 w-100"
+        >
+          <Image
+            src={CubeIcon}
+            alt="cube icon"
+            fill={true}
+            className="object-cover rounded-xl"
+          />
+        </div>
+
+
+      </Container>
+    </div>
+  )
 }
+

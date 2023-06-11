@@ -4,7 +4,7 @@ import CubeImage from "../assets/images/cube-machine-image.png";
 import MeImage from "../assets/images/me-image.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ContactButton from "./ContactButton";
+import ContactButton from "./buttons/ContactButton";
 
 export default function Intro({ styles }) {
   const imageVariants = {
