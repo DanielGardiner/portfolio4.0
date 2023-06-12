@@ -1,11 +1,15 @@
+import Image from "next/image";
 import ContactButton from "./buttons/ContactButton";
+import LogoImage from "../assets/images/garden-logo.webp";
+
 import FullPageWidth from "./layout/FullPageWidth";
 import InnerGridContainer from "./layout/InnerGridContainer";
 import OuterWidthContainer from "./layout/OuterWidthContainer";
 
 export default function Header({ styles }) {
   return (
-    <div className={`w-100 flex justify-end ${styles}`}>
+    <div className={`w-100 flex justify-end items-center ${styles}`}>
+      {/* <Image src={LogoImage} alt="logo" width={110} className="opacity-70" /> */}
       <ContactButton />
     </div>
   );

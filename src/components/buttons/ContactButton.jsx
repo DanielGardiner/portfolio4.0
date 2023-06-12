@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const COPY_DISPLAY_MILLISECONDS = 1500;
@@ -24,7 +23,7 @@ export default function ContactButton() {
 
   return (
     <CopyToClipboard text={"gardiner.daniel@hotmail.co.uk"} onCopy={handleCopy}>
-      <button className="relative mt-6 inline-flex items-center font-bold gradient-button px-6 py-2 rounded-[40px] hover:scale-105 ease-in duration-300">
+      <button className="relative inline-flex items-center font-bold gradient-button px-6 py-2 rounded-[40px] hover:scale-105 ease-in duration-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
