@@ -54,18 +54,28 @@ const examples = [
   },
 ];
 
+function Leaf({ styles }) {
+  return (
+    <Image
+      src={LeafImage}
+      alt="leaf"
+      width={60}
+      className={`hidden mobile:block mobile:absolute -top-20 ${styles}`}
+    />
+  )
+}
+
 export default function Services({ styles }) {
   return (
     <div className="relative">
       <Container>
         <div className="col-span-12 relaive">
-          <Image src={LeafImage} alt="leaf" width={60} className="absolute -left-5 -top-10 rotate-[-45deg]" />
+          <Leaf styles="-left-5 rotate-[-45deg] " />
           <div className=" flex items-center flex-col mb-8">
             <h3 className="text-4xl text-themePurple font-bold">All my amazing services</h3>
             <h4 className="text-1xl text-themeGreen  font-bold">(The things I love to do)</h4>
           </div>
-
-          <Image src={LeafImage} alt="leaf" width={60} className="absolute -right-5 -top-10 rotate-[45deg]" />
+          <Leaf styles="-right-5 rotate-[45deg] " />
         </div>
 
         {examples.map((example) => (
