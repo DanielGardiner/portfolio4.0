@@ -1,7 +1,7 @@
 "use client";
 
 import LeafImage from "../assets/images/leaf.webp";
-import CubeImage from "../assets/images/cube-machine-image.png";
+import WaterCanImage from "../assets/images/watercan.webp";
 import MeImage from "../assets/images/me-image.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,19 +12,37 @@ const examples = [
     title: "title",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: CubeImage,
+    image: WaterCanImage,
   },
   {
     title: "title",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: CubeImage,
+    image: WaterCanImage,
   },
   {
     title: "title",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: CubeImage,
+    image: WaterCanImage,
+  },
+  {
+    title: "title",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
+    image: WaterCanImage,
+  },
+  {
+    title: "title",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
+    image: WaterCanImage,
+  },
+  {
+    title: "title",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
+    image: WaterCanImage,
   },
 ];
 
@@ -42,15 +60,13 @@ export default function Services({ styles }) {
       </div>
 
       {examples.map((example) => (
-        <div key={example.title} className="col-span-4">
-          <div className="bg-blue-500">
-            <Image
-              src={example.image}
-              alt=""
-              width="auto"
-              height="auto"
-            />
-          </div>
+        <div key={example.title} className="col-span-4 flex items-center flex-col ">
+          <Image
+            src={example.image}
+            alt=""
+            width={100}
+            height={100}
+          />
           {example.title}
         </div>
       ))}
