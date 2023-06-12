@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Page() {
   return (
     <>
-      <Hero styles="mb-[150px]" />
+      <Hero styles="mb-[220px]" />
       <Services />
       {/* <Intro styles="col-span-full mt-52 bg-transparent" /> */}
       {/* <Projects styles="col-span-full mt-72 bg-transparent" /> */}

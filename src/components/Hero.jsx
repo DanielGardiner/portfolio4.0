@@ -3,11 +3,8 @@
 import InnerGridContainer from "../components/layout/InnerGridContainer";
 import OuterWidthContainer from "../components/layout/OuterWidthContainer";
 
-// import CubeIcon from "../assets/images/cube-code-image.png";
-// import CubeIcon from "../assets/images/me-image.png";
-import CubeIcon from "../assets/images/gardener-5.webp";
-// import CubeIcon from "../assets/images/portal-hero.png";
-// import CubeIcon from "../assets/images/cube-code-image.png";
+// import CubeIcon from "../assets/images/gardener-4.png";
+import CubeIcon from "../assets/images/gardener-4-high.webp";
 
 import Image from "next/image";
 import MobileImg from "../assets/images/cube-code-image.png";
@@ -39,12 +36,12 @@ export default function Hero({ styles }) {
 
   return (
     <div className={`bg-themeGrey-100 relative ${styles}`}>
-        {/* <div className="h-[120px] w-[80px] border-[7px] border-white rounded-full absolute -left-10 -top-10" />
-        <div className="h-[250px] w-[110px] border-[7px] border-white rounded-full absolute -left-10 -top-11" />
-        <div className="h-[350px] w-[150px] border-[7px] border-white rounded-full absolute -left-10 -top-10" /> */}
+        {/* <div className="h-[120px] w-[80px] border-[7px] border-white rounded-full absolute -left-10 -top-10" /> */}
+        {/* <div className="h-[250px] w-[110px] border-[7px] border-white rounded-full absolute -left-10 -top-11" /> */}
+        {/* <div className="h-[350px] w-[150px] border-[7px] border-white rounded-full absolute -left-10 -top-10" /> */}
 
       <Container styles="pb-16">
-        <Header styles="col-span-12 mb-9" />
+        <Header styles="col-span-12 mb-9 z-10" />
         <div className="col-span-12 tablet:col-span-6 flex-col flex mb-8 tablet:mb-0">
 
           {/* title */}
@@ -72,13 +69,13 @@ export default function Hero({ styles }) {
 
         </div>
         <div
-          className="col-span-12 tablet:col-span-6 text-white relative min-h-[800px] tablet:min-h-0 w-100"
+          className="col-span-12 tablet:col-span-6 text-white relative min-h-[600px] tablet:min-h-0 w-100"
         >
           <Image
             src={CubeIcon}
             alt="cube icon"
             fill={true}
-            className="object-cover rounded-xl"
+            className="object-cover tablet:object-contain rounded-xl tablet:scale-[1.5] tablet:mt-16"
           />
         </div>
       </Container>
