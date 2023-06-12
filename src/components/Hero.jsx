@@ -36,9 +36,8 @@ export default function Hero({ styles }) {
 
   return (
     <div className={`bg-themeGrey-100 relative ${styles}`}>
-      {/* <div className="h-[120px] w-[80px] border-[7px] border-white rounded-full absolute -left-10 -top-10" /> */}
-      {/* <div className="h-[250px] w-[110px] border-[7px] border-white rounded-full absolute -left-10 -top-11" /> */}
-      {/* <div className="h-[350px] w-[150px] border-[7px] border-white rounded-full absolute -left-10 -top-10" /> */}
+      {/* <div className="h-[750px] w-[750px] border-[5px] border-gray-100 rounded-full absolute -left-[400px] -top-10 opacity-50" />
+      <div className="h-[650px] w-[650px] border-[5px] border-gray-100 rounded-full absolute -left-[400px] -top-15 opacity-50" /> */}
 
       <Container styles="pb-16">
         <Header styles="col-span-12 mt-5 mb-9 z-10" />

@@ -17,49 +17,37 @@ import Container from "./layout/Container";
 
 const examples = [
   {
-    title: "title",
+    title: "Garden Design and Installation",
+    description:
+      "Let's create your dream garden together! I'll work closely with you to design and install a personalized oasis that matches your style and preferences. From selecting the perfect plants to adding delightful features, we'll make your outdoor space absolutely enchanting.",
+    image: SmallPotImage,
+  },
+  {
+    title: "Planting and Maintenance",
+    description:
+      "I'm a plant enthusiast! I specialize in selecting and planting a wide variety of flowers, shrubs, trees, and other green wonders that thrive in your local climate. With my expert care, your plants will flourish and bring vibrant beauty to your garden all year round.",
+    image: PotPlantImage,
+  },
+  {
+    title: "Lawn Care and Maintenance",
+    description:
+      "Say hello to a lush, green carpet! I provide top-notch lawn care services to keep your grass looking fabulous. From mowing and fertilizing to aerating and weed control, I'll pamper your lawn and make it the envy of the neighborhood.",
+    image: PlantVineImage,
+  },
+  {
+    title: "Irrigation and Water Management",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
     image: WaterCanImage,
   },
   {
-    title: "title",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: PotPlantImage,
-  },
-  {
-    title: "title",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: PlantVineImage,
-  },
-  {
-    title: "title",
+    title: "Garden Clean-Up and Waste Removal",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
     image: ForkVineImage,
   },
   {
-    title: "title",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: SmallPotImage,
-  },
-  {
-    title: "title",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: JugImage,
-  },
-  {
-    title: "title",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: FlowerImage,
-  },
-  {
-    title: "title",
+    title: "Seasonal Planting and Decoration",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
     image: AppleImage,
@@ -68,44 +56,50 @@ const examples = [
 
 export default function Services({ styles }) {
   return (
-    <Container>
-      <div className="col-span-12 relaive">
-        <Image src={LeafImage} alt="leaf" width={60} className="absolute -left-5 -top-10 rotate-[-45deg]" />
-        <div className=" flex items-center flex-col mb-8">
-          <h3 className="text-4xl text-themePurple font-bold">All my amazing services</h3>
-          <h4 className="text-1xl text-themeGreen  font-bold">(The things I love to do)</h4>
+    <div className="relative">
+      <Container>
+        <div className="col-span-12 relaive">
+          <Image src={LeafImage} alt="leaf" width={60} className="absolute -left-5 -top-10 rotate-[-45deg]" />
+          <div className=" flex items-center flex-col mb-8">
+            <h3 className="text-4xl text-themePurple font-bold">All my amazing services</h3>
+            <h4 className="text-1xl text-themeGreen  font-bold">(The things I love to do)</h4>
+          </div>
+
+          <Image src={LeafImage} alt="leaf" width={60} className="absolute -right-5 -top-10 rotate-[45deg]" />
         </div>
 
-        <Image src={LeafImage} alt="leaf" width={60} className="absolute -right-5 -top-10 rotate-[45deg]" />
-      </div>
-
-      {examples.map((example) => (
-        <div
-          key={example.title}
-          className="col-span-12 mobile:col-span-6 tablet:col-span-4 flex items-center flex-col mb-12"
-        >
-          <Card>
+        {examples.map((example) => (
+          <div
+            key={example.title}
+            className="
+            col-span-12 [@media(min-width:670px)]:col-span-6 [@media(min-width:820px)]:col-span-4 
+            mb-16 
+            rounded-xl shadow-md
+            flex flex-col justify-between items-center
+            p-6
+            z-40
+          "
+          >
             <Image
               src={example.image}
               alt=""
-              width={100}
+              width={80}
               height={100}
+              className="mb-8"
             />
-            {example.title}
-          </Card>
-        </div>
-      ))}
-    </Container>
+            <div>
+              <h6 className="font-semibold text-themePurple text-center mb-4 text-xl">
+                {example.title}
+              </h6>
+              <p>
+                {example.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </Container>
+    </div>
+
   );
 }
 
-
-function Card({ children }) {
-  return (
-    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-      <div class="md:flex p-10">
-        {children}
-      </div>
-    </div>
-  )
-}
