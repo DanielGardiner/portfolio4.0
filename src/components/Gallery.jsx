@@ -18,6 +18,18 @@ const examples = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
     image: SceneLadyWateringImage,
   },
+  {
+    title: "Early establishment of rooted",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
+    image: ScenePeopleImage,
+  },
+  {
+    title: "Continue to develop to become a global brand",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
+    image: SceneLadyWateringImage,
+  },
 ];
 
 export default function Gallery({ styles }) {
@@ -50,27 +62,47 @@ export default function Gallery({ styles }) {
             />
           )
 
+          if (isEven) {
+            return (
+              <>
+                <GalleryImage
+                  text={text}
+                  styles="flex tablet:hidden"
+                >
+                  {image}
+                </GalleryImage>
+                <GalleryText
+                  isStartPosition
+                  image={image}
+                >
+                  {text}
+                </GalleryText>
+                <GalleryImage
+                  text={text}
+                  styles="hidden tablet:flex"
+                >
+                  {image}
+                </GalleryImage>
+
+              </>
+            )
+          }
 
           return (
             <>
-              <div
-                className={`
-                flex flex-col justify-center
-                [@media(min-width:870px)]:col-start-2 
-                mb-[60px] tablet:mb-[150px]  
-                col-span-full ${isEven ? '[@media(min-width:870px)]:col-span-4' : '[@media(min-width:870px)]:col-span-6'}
-              `}
+              <GalleryImage
+                isStartPosition
+                text={text}
               >
-                {isEven ? text : image}
-              </div>
-
-              <div className={`
-              flex flex-col justify-center mb-[150px]
-              col-span-full ${isEven ? '[@media(min-width:870px)]:col-span-6' : '[@media(min-width:870px)]:col-span-4'}
-            `}>
-                {isEven ? image : text}
-              </div>
+                {image}
+              </GalleryImage>
+              <GalleryText
+                image={image}
+              >
+                {text}
+              </GalleryText>
             </>
+
           )
         })}
       </Container>
@@ -79,5 +111,35 @@ export default function Gallery({ styles }) {
     </div>
 
   );
+}
+
+function GalleryImage({ children, styles, isStartPosition }) {
+  return (
+    <div className={`
+      flex-col justify-center
+      mb-[60px] tablet:mb-[150px]  
+      col-span-full
+      ${isStartPosition && '[@media(min-width:870px)]:col-start-2 '}
+      [@media(min-width:870px)]:col-span-6
+      ${styles}
+    `}>
+      {children}
+    </div>
+  )
+}
+
+function GalleryText({ children, styles, isStartPosition }) {
+  return (
+    <div className={`
+      flex flex-col justify-center
+      mb-[60px] tablet:mb-[150px]  
+      col-span-full
+      ${isStartPosition && '[@media(min-width:870px)]:col-start-2 '}
+      [@media(min-width:870px)]:col-span-4
+      ${styles}
+    `}>
+      {children}
+    </div>
+  )
 }
 

@@ -67,21 +67,22 @@ function Leaf({ styles }) {
 
 export default function Services({ styles }) {
   return (
-    <div className="relative">
-      <Container>
-        <div className="col-span-12 relaive">
-          <Leaf styles="-left-5 rotate-[-45deg] " />
-          <div className=" flex items-center flex-col mb-8">
-            <h3 className="text-4xl text-themePurple font-bold">All my amazing services</h3>
-            <h4 className="text-1xl text-themeGreen  font-bold">(The things I love to do)</h4>
+    <>
+      <div className="relative">
+        <Container>
+          <div className="col-span-12 relaive z-40">
+            <Leaf styles="-left-5 rotate-[-45deg] " />
+            <div className=" flex items-center flex-col mb-8">
+              <h3 className="text-4xl text-themePurple font-bold">All my amazing services</h3>
+              <h4 className="text-1xl text-themeGreen  font-bold">(The things I love to do)</h4>
+            </div>
+            <Leaf styles="-right-5 rotate-[45deg] " />
           </div>
-          <Leaf styles="-right-5 rotate-[45deg] " />
-        </div>
 
-        {examples.map((example) => (
-          <div
-            key={example.title}
-            className="
+          {examples.map((example) => (
+            <div
+              key={example.title}
+              className="
             col-span-12 [@media(min-width:670px)]:col-span-6 [@media(min-width:820px)]:col-span-4 
             mb-16 
             rounded-xl shadow-md
@@ -89,27 +90,27 @@ export default function Services({ styles }) {
             p-6
             z-40
           "
-          >
-            <Image
-              src={example.image}
-              alt=""
-              width={80}
-              height={100}
-              className="mb-8"
-            />
-            <div>
-              <h6 className="font-semibold text-themePurple text-center mb-4 text-xl">
-                {example.title}
-              </h6>
-              <p>
-                {example.description}
-              </p>
+            >
+              <Image
+                src={example.image}
+                alt=""
+                width={80}
+                height={100}
+                className="mb-8"
+              />
+              <div>
+                <h6 className="font-semibold text-themePurple text-center mb-4 text-xl">
+                  {example.title}
+                </h6>
+                <p>
+                  {example.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
-      </Container>
-    </div>
-
+          ))}
+        </Container>
+      </div>
+    </>
   );
 }
 

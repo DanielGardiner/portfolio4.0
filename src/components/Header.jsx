@@ -8,9 +8,9 @@ import OuterWidthContainer from "./layout/OuterWidthContainer";
 
 export default function Header({ styles }) {
   return (
-    <div className={`w-100 flex justify-end items-center ${styles}`}>
+    <div className={`w-full flex justify-end items-center ${styles}`}>
       {/* <Image src={LogoImage} alt="logo" width={110} className="opacity-70" /> */}
-      <ContactButton />
+      <ContactButton styles="hidden mobile:flex" />
     </div>
   );
 }

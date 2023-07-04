@@ -40,7 +40,7 @@ export default function Hero({ styles }) {
       <div className="h-[650px] w-[650px] border-[5px] border-gray-100 rounded-full absolute -left-[400px] -top-15 opacity-50" /> */}
 
       <Container styles="pb-16">
-        <Header styles="col-span-12 mt-5 mb-9 z-10" />
+        <Header styles="mt-5 mb-9 z-10 col-span-full" />
         <div className="col-span-12 tablet:col-span-6 flex-col flex mb-8 tablet:mb-0">
 
           {/* title */}
@@ -68,13 +68,13 @@ export default function Hero({ styles }) {
 
         </div>
         <div
-          className="col-span-12 tablet:col-span-6 text-white relative min-h-[600px] tablet:min-h-0 w-100"
+          className="col-span-12 tablet:col-span-6 text-white relative min-h-[600px] tablet:min-h-0 w-full"
         >
           <Image
             src={CubeIcon}
             alt="cube icon"
             fill={true}
-            className="object-cover tablet:object-contain rounded-xl tablet:scale-[1.5] tablet:mt-16"
+            className="object-cover tablet:object-contain rounded-xl scale-110 tablet:scale-[1.5] tablet:mt-16"
           />
         </div>
       </Container>
