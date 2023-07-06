@@ -8,15 +8,15 @@ export default function Gallery({
   styles,
   items = [
     {
+      preTitle: '',
       title: '',
       description: '',
       image: null,
     }
   ]
 }) {
-  console.log("🚀 [qq] ~ items:", items)
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       <div className="h-[750px] w-[750px] border-[5px] border-gray-100 rounded-full -left-[400px] -top-10 opacity-50 hidden tablet:block tablet:absolute" />
       <div className="h-[650px] w-[650px] border-[5px] border-gray-100 rounded-full -left-[400px] -top-15 opacity-50 hidden tablet:block tablet:absolute" />
       <Container>
@@ -26,7 +26,7 @@ export default function Gallery({
 
           const text = (
             <div className="flex flex-col">
-              <h6 className="font-semibold text-themeGreen mb-2">About us</h6>
+              {item.preTitle && (<h6 className="font-semibold text-themeGreen mb-2">{item.preTitle}</h6>)}
               <h5 className="font-bold text-themePurple  mb-4">
                 {item.title}
               </h5>

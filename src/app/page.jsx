@@ -14,6 +14,10 @@ import SceneTwoSimpleImage from "../assets/images/scene-two-simple.webp";
 import SceneYoungImage from "../assets/images/scene-young.webp";
 import SceneHardWorkImage from "../assets/images/scene-hard-work.webp";
 
+// TODO: add a who we are section 
+// TODO: add an image gallery section
+// TODO: add pricing section
+
 export default function Page() {
   return (
     <>
@@ -21,6 +25,7 @@ export default function Page() {
       <Services />
       <Gallery items={[
         {
+          preTitle: "About us",
           title: "Early establishment of rooted",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
@@ -37,12 +42,14 @@ export default function Page() {
       <ContactSection styles="mb-[60px] tablet:mb-[120px]" />
       <Gallery items={[
         {
+          preTitle: "About us",
           title: "Early establishment of rooted",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
           image: SceneDetailedImage,
         },
         {
+          preTitle: "About us",
           title: "Continue to develop to become a global brand",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
