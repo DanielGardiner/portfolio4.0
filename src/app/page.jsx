@@ -3,6 +3,7 @@
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Gallery from "../components/Gallery";
+import ImageGallery from "../components/ImageGallery";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 
@@ -57,6 +58,26 @@ export default function Page() {
         },
       ]}
       />
+      <ImageGallery items={[
+        {
+          image: SceneGingerImage,
+        },
+        {
+          image: SceneTwoSimpleImage,
+        },
+        {
+          image: SceneHardWorkImage,
+        },
+        {
+          image: SceneGingerImage,
+        },
+        {
+          image: SceneTwoSimpleImage,
+        },
+        {
+          image: SceneHardWorkImage,
+        },
+      ]} />
       <Footer />
     </>
   );
