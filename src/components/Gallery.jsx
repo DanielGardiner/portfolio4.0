@@ -1,44 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import ScenePeopleImage from "../assets/images/scene-people.webp";
-import SceneLadyWateringImage from "../assets/images/scene-ladywatering.webp";
 import Container from "./layout/Container";
 
-const examples = [
-  {
-    title: "Early establishment of rooted",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: ScenePeopleImage,
-  },
-  {
-    title: "Continue to develop to become a global brand",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: SceneLadyWateringImage,
-  },
-  {
-    title: "Early establishment of rooted",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: ScenePeopleImage,
-  },
-  {
-    title: "Continue to develop to become a global brand",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-    image: SceneLadyWateringImage,
-  },
-];
 
-export default function Gallery({ styles }) {
+export default function Gallery({
+  styles,
+  items = [
+    {
+      title: '',
+      description: '',
+      image: null,
+    }
+  ]
+}) {
+  console.log("🚀 [qq] ~ items:", items)
   return (
     <div className="relative">
       <div className="h-[750px] w-[750px] border-[5px] border-gray-100 rounded-full -left-[400px] -top-10 opacity-50 hidden tablet:block tablet:absolute" />
       <div className="h-[650px] w-[650px] border-[5px] border-gray-100 rounded-full -left-[400px] -top-15 opacity-50 hidden tablet:block tablet:absolute" />
       <Container>
-        {examples.map((example, i) => {
+        {items.map((item, i) => {
 
           const isEven = i % 2 === 0;
 
@@ -46,21 +28,21 @@ export default function Gallery({ styles }) {
             <div className="flex flex-col">
               <h6 className="font-semibold text-themeGreen mb-2">About us</h6>
               <h5 className="font-bold text-themePurple  mb-4">
-                {example.title}
+                {item.title}
               </h5>
               <p className="text-themeGrey-500">
-                {example.description}
+                {item.description}
               </p>
             </div>
           )
 
-          const image = (
+          const image = item.image ? (
             <Image
-              src={example.image}
+              src={item.image}
               alt=""
               className="object-cover"
             />
-          )
+          ) : null;
 
           if (isEven) {
             return (

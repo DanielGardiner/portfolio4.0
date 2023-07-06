@@ -8,10 +8,10 @@ const sides = {
   RIGHT: "right",
 };
 
-export default function ContactSection({ children }) {
+export default function ContactSection({ styles }) {
 
   return (
-    <div className="bg-themeGrey-100 py-16">
+    <div className={`bg-themeGrey-100 py-[180px] tablet:py-28 ${styles}`}>
       <Container>
         <div className="col-span-12 tablet:col-span-10 tablet:col-start-2 text-center">
           <h4 className="text-themePurple text-4xl font-bold mb-4">
