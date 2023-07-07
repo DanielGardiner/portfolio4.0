@@ -27,8 +27,8 @@ export default function Gallery({
           if (!item.image) return null
           return (
             <div key={i} className="
-              col-span-12 mr-6 mb-12 bg-white
-              [@media(min-width:870px)]:col-span-6 rounded-xl border-2 border-themeGrey-100">
+              col-span-12 tablet:mr-6 mb-12 bg-white
+              tablet:col-span-6 rounded-xl border-2 border-themeGrey-100">
               <Image
                 src={item.image}
                 alt=""

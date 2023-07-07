@@ -14,6 +14,7 @@ import SceneGingerImage from "../assets/images/scene-ginger-people.webp";
 import SceneTwoSimpleImage from "../assets/images/scene-two-simple.webp";
 import SceneYoungImage from "../assets/images/scene-young.webp";
 import SceneHardWorkImage from "../assets/images/scene-hard-work.webp";
+import Pricing from "../components/Pricing";
 
 // TODO: add a who we are section 
 // TODO: add an image gallery section
@@ -78,6 +79,8 @@ export default function Page() {
           image: SceneHardWorkImage,
         },
       ]} />
+      <Pricing />
+      <ContactSection styles="" />
       <Footer />
     </>
   );

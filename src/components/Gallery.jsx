@@ -101,8 +101,8 @@ function GalleryImage({ children, styles, isStartPosition }) {
       flex-col justify-center
       mb-[60px] tablet:mb-[150px]  
       col-span-full
-      ${isStartPosition && '[@media(min-width:870px)]:col-start-2 '}
-      [@media(min-width:870px)]:col-span-6
+      ${isStartPosition && 'tablet:col-start-2 '}
+      tablet:col-span-6
       ${styles}
     `}>
       {children}
@@ -116,8 +116,8 @@ function GalleryText({ children, styles, isStartPosition }) {
       flex flex-col justify-center
       mb-[60px] tablet:mb-[150px]  
       col-span-full
-      ${isStartPosition && '[@media(min-width:870px)]:col-start-2 '}
-      [@media(min-width:870px)]:col-span-4
+      ${isStartPosition && 'tablet:col-start-2 '}
+      tablet:col-span-4
       ${styles}
     `}>
       {children}
