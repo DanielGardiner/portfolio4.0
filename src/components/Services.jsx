@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 
 import LeafImage from "../assets/images/leaf.webp";
 import WaterCanImage from "../assets/images/watercan.webp";
@@ -9,10 +10,11 @@ import SmallPotImage from "../assets/images/smallpot.webp";
 import JugImage from "../assets/images/jug.webp";
 import FlowerImage from "../assets/images/flower.webp";
 import AppleImage from "../assets/images/apple.webp";
+import useScreenDimensions from "../hooks/useScreenDimensions";
 
 import MeImage from "../assets/images/me-image.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
+
 import Container from "./layout/Container";
 
 const examples = [
@@ -55,40 +57,66 @@ const examples = [
 ];
 
 function Leaf({ styles }) {
+  return null;
   return (
     <Image
       src={LeafImage}
       alt="leaf"
       width={60}
-      className={`hidden mobile:block mobile:absolute -top-20 ${styles}`}
+      className={`hidden mobile:block ${styles}`}
     />
   )
 }
 
 export default function Services({ styles }) {
+
+  const { isMobile } = useScreenDimensions();
+
   return (
     <>
       <div className="relative">
         <Container>
-          <div className="col-span-12 relaive z-40">
-            <Leaf styles="-left-5 rotate-[-45deg] " />
-            <div className=" flex items-center flex-col mb-8">
-              <h3 className="text-4xl text-themePurple font-bold">All my amazing services</h3>
-              <h4 className="text-1xl text-themeGreen  font-bold">(The things I love to do)</h4>
+          <div className="col-span-12 relaive z-40 flex items-center justify-center mb-8">
+            <Leaf styles="rotate-[-45deg] -mt-8 mr-3" />
+            <div className=" flex items-center flex-col">
+              <h3 className="text-4xl text-themePurple font-bold mb-6">All our amazing services</h3>
+              {/* <h4 className="text-1xl text-themeGreen  font-bold">The things I love to do</h4> */}
             </div>
-            <Leaf styles="-right-5 rotate-[45deg] " />
+            <Leaf styles="rotate-[45deg] -mt-5 ml-2" />
           </div>
 
+          {/* <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: 100 }}
+            transition={{ duration: 4 }} // Adjust the duration here
+          >
+            Content
+          </motion.div> */}
+
           {examples.map((example) => (
-            <div
+            <motion.div
+              variants={{
+                hide: { opacity: 0, y: 0, scale: 0.9 },
+                show: { opacity: 1, y: 0, scale: 1 }
+              }}
+              initial={'hide'}
+              whileInView={'show'}
+              transition={{
+                duration: 0.8,
+                ease: "easeIn",
+                stiffness: 30,
+              }}
+              viewport={{ once: true }}
+
               key={example.title}
               className="
-            col-span-12 [@media(min-width:670px)]:col-span-6 [@media(min-width:820px)]:col-span-4 
-            mb-16 
-            rounded-xl shadow-md
-            flex flex-col justify-between items-center
-            p-6
-            z-40
+          col-span-12 [@media(min-width:670px)]:col-span-6 [@media(min-width:820px)]:col-span-4
+          mb-16
+          rounded-xl
+          shadow-[0_15px_30px_15px_rgba(0,0,0,0.04)]
+          flex flex-col justify-between items-center
+          p-6
+          z-40
           "
             >
               <Image
@@ -106,10 +134,10 @@ export default function Services({ styles }) {
                   {example.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </Container>
-      </div>
+      </div >
     </>
   );
 }

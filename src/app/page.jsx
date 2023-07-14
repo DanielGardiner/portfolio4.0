@@ -14,6 +14,14 @@ import SceneGingerImage from "../assets/images/scene-ginger-people.webp";
 import SceneTwoSimpleImage from "../assets/images/scene-two-simple.webp";
 import SceneYoungImage from "../assets/images/scene-young.webp";
 import SceneHardWorkImage from "../assets/images/scene-hard-work.webp";
+
+import Action1Image from "../assets/images/action-1.jpg";
+import Action2Image from "../assets/images/action-2.jpg";
+import Action3Image from "../assets/images/action-3.jpg";
+import Action4Image from "../assets/images/action-4.jpg";
+import Action5Image from "../assets/images/action-5.jpg";
+import Action6Image from "../assets/images/action-6.jpg";
+
 import Pricing from "../components/Pricing";
 
 // TODO: add a who we are section 
@@ -31,18 +39,18 @@ export default function Page() {
           title: "Early establishment of rooted",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-          image: ScenePeopleImage,
+          image: Action5Image,
         },
         {
           title: "Continue to develop to become a global brand",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita ullam placeat maxime nostrum voluptate at eligendi quae soluta cupiditate, laborum eum harum quasi similique corrupti itaque architecto perferendis quod.",
-          image: SceneLadyWateringImage,
+          image: Action2Image,
         }
       ]}
       />
       <ContactSection styles="mb-[60px] tablet:mb-[120px]" />
-      <Gallery items={[
+      {/* <Gallery items={[
         {
           preTitle: "About us",
           title: "Early establishment of rooted",
@@ -58,7 +66,7 @@ export default function Page() {
           image: SceneYoungImage,
         },
       ]}
-      />
+      /> */}
       <ImageGallery items={[
         {
           image: SceneGingerImage,

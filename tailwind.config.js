@@ -26,9 +26,10 @@ module.exports = {
           600: "#1691A8",
           700: "#0E7BA8",
         },
-        myGreen: {
-          DEFAULT: "#29AC6F",
-        },
+        themeOrange: {
+          100: "#F79674",
+          500: "#F46F65",
+        }
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

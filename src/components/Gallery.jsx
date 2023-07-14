@@ -1,8 +1,8 @@
 "use client";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
 import Container from "./layout/Container";
-
 
 export default function Gallery({
   styles,
@@ -15,6 +15,7 @@ export default function Gallery({
     }
   ]
 }) {
+
   return (
     <div className="relative bg-white">
       <div className="h-[750px] w-[750px] border-[5px] border-gray-100 rounded-full -left-[400px] -top-10 opacity-50 hidden tablet:block tablet:absolute" />
@@ -40,7 +41,7 @@ export default function Gallery({
             <Image
               src={item.image}
               alt=""
-              className="object-cover"
+              className="object-cover max-h-[400px] rounded-xl"
             />
           ) : null;
 
@@ -97,31 +98,57 @@ export default function Gallery({
 
 function GalleryImage({ children, styles, isStartPosition }) {
   return (
-    <div className={`
-      flex-col justify-center
-      mb-[60px] tablet:mb-[150px]  
-      col-span-full
-      ${isStartPosition && 'tablet:col-start-2 '}
-      tablet:col-span-6
-      ${styles}
-    `}>
+    <motion.dev
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        y: {
+          duration: 0.8,
+          ease: 'easeIn',
+          type: 'spring',
+          stiffness: 30
+        }
+      }}
+      viewport={{ once: true }}
+      className={`
+        flex-col justify-center
+        mb-[60px] tablet:mb-[150px]  
+        col-span-full
+        ${isStartPosition && 'tablet:col-start-2 '}
+        tablet:col-span-6
+        ${styles}
+      `}
+    >
       {children}
-    </div>
+    </motion.dev>
   )
 }
 
 function GalleryText({ children, styles, isStartPosition }) {
   return (
-    <div className={`
-      flex flex-col justify-center
-      mb-[60px] tablet:mb-[150px]  
-      col-span-full
-      ${isStartPosition && 'tablet:col-start-2 '}
-      tablet:col-span-4
-      ${styles}
-    `}>
+    <motion.div
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        y: {
+          duration: 0.8,
+          ease: 'easeIn',
+          type: 'spring',
+          stiffness: 30
+        }
+      }}
+      viewport={{ once: true }}
+      className={`
+        flex flex-col justify-center
+        mb-[60px] tablet:mb-[150px]  
+        col-span-full
+        ${isStartPosition && 'tablet:col-start-2 '}
+        tablet:col-span-4
+        ${styles}
+      `}
+    >
       {children}
-    </div>
+    </motion.div>
   )
 }
 
